@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网格布局</title>
+</head>
+
+<body>
+    <h1>基本网格布局</h1>
+    <div class="Grid">
+        <div class="Grid-cell">1/2</div>
+        <div class="Grid-cell">1/2</div>
+    </div>
+    <div class="Grid">
+        <div class="Grid-cell">1/3</div>
+        <div class="Grid-cell">1/3</div>
+        <div class="Grid-cell">1/3</div>
+    </div>
+    <div class="Grid">
+        <div class="Grid-cell">1/4</div>
+        <div class="Grid-cell">1/4</div>
+        <div class="Grid-cell">1/4</div>
+        <div class="Grid-cell">1/4</div>
+    </div>
+    <div class="Grid">
+        <div class="Grid-cell Grid-cell-block">
+            在准备 demo 的时候，我意识到，真正了解 CSS 是非常有帮助，而不仅仅是写一些属性，希望能够在浏览器中获得最佳的效果。越了解浮动，flexbox 和 grid 的工作原理，以及您对浏览器的了解越多，越容易实现渐进增强。
+        </div>
+        <div class="Grid-cell Grid-cell-block">
+            渐进增强可能在一开始需要一点工作，但是从长远来看可以节省时间和金钱。我们不知道用户接下来会使用哪些设备，操作系统或浏览器访问我们的网站。如果我们为不是太好的浏览器提供可访问和可用的体验，那么我们就正在构建具有弹性的产品，并为意想不到的发展做好准备。
+        </div>
+    </div>
+    <h1>百分比网格布局</h1>
+    <div class="Grid">
+        <div class="Grid-cell u-1of2">1/2</div>
+        <div class="Grid-cell">auto</div>
+        <div class="Grid-cell">auto</div>
+    </div>
+    <div class="Grid">
+        <div class="Grid-cell">auto</div>
+        <div class="Grid-cell u-1of3">1/3</div>
+    </div>
+    <div class="Grid">
+        <div class="Grid-cell u-1of2">
+            1/4
+        </div>
+        <div class="Grid-cell">auto</div>
+        <div class="Grid-cell">1/3</div>
+    </div>
+
+</body>
+
+</html>
+<style>
+    body {
+        padding: 10px;
+        margin: 0 auto;
+        background-color: #E2E2E2;
+        max-width: 1024px;
+        color: #595B66;
+        font-family: 'Microsoft Yahei', sans-serif;
+    }
+
+    /* 基本网格布局 */
+    .Grid {
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .Grid-cell {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        margin: 20px 10px;
+        background-color: #e0dfcc;
+        font-size: 24px;
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    .Grid-cell-block {
+        line-height: inherit;
+        padding: 15px;
+        text-align: left;
+        height: 300px;
+        font-size: 16px;
+    }
+
+    /* 百分比布局 */
+    .Grid-cell.u-full {
+        flex: 0 0 100%;
+    }
+
+    .Grid-cell.u-1of2 {
+        flex: 0 0 50%;
+    }
+
+    .Grid-cell.u-1of3 {
+        flex: 0 0 33.3333%;
+    }
+
+    .Grid-cell.u-1of4 {
+        flex: 0 0 25%;
+    }
+</style>

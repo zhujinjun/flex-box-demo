@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圣杯布局</title>
+</head>
+
+<body class="HolyGrail">
+    <header>#header</header>
+    <div class="HolyGrail-body">
+        <main class="HolyGrail-content">#center</main>
+        <nav class="HolyGrail-nav">#left</nav>
+        <aside class="HolyGrail-ads">#right</aside>
+    </div>
+    <footer>#foot</footer>
+</body>
+
+</html>
+<style>
+    body {
+        padding: 10px;
+        margin: 0 auto;
+        background-color: #E2E2E2;
+        max-width: 1200px;
+        color: #595B66;
+        font-family: 'Microsoft Yahei', sans-serif;
+    }
+
+    header {
+        background: #007acc;
+        color: white;
+        text-align: center;
+    }
+
+    footer {
+        background: #858e94;
+        color: white;
+    }
+
+    aside {
+        background-color: coral
+    }
+
+    .HolyGrail {
+        display: flex;
+        min-height: 50vh;
+        flex-direction: column;
+    }
+
+    header,
+    footer {
+        flex: 1;
+    }
+
+    .HolyGrail-body {
+        display: flex;
+        flex: 1;
+    }
+
+    .HolyGrail-content {
+        background: #F3F3F3;
+        flex: 1;
+    }
+
+    .HolyGrail-nav,
+    .HolyGrail-ads {
+        /* 两个边栏的宽度设为12em */
+        flex: 0 0 12em;
+    }
+
+    .HolyGrail-nav {
+        /* 导航放到最左边 */
+        /* order: -1; */
+        background-color: #2d4054;
+    }
+
+    @media (max-width: 768px) {
+        .HolyGrail-body {
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .HolyGrail-nav,
+        .HolyGrail-ads,
+        .HolyGrail-content {
+            flex: auto;
+        }
+    }
+</style>
